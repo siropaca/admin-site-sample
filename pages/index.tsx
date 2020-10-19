@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
+import Counter from '../components/counter';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,7 +15,8 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        {process.env.API_KEY}
+        <div>{process.env.API_KEY}</div>
+        <Counter />
       </main>
 
       <footer className={styles.footer}>

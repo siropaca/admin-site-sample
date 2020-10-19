@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@types/node": "^14.11.10",
+    "@types/react": "^16.9.53",
+    "@types/react-redux": "^7.1.9",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "next": "9.5.5",
@@ -19,8 +23,6 @@
     "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
-    "@types/node": "^14.11.8",
-    "@types/react": "^16.9.52",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.1",
     "prettier": "^2.1.2",
