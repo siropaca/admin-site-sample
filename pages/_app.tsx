@@ -1,16 +1,23 @@
+import React from 'react';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import { useStore } from '../store';
 
-import '../styles/globals.css';
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import ResetStyle from '../styles/reset';
+import GlobalStyle from '../styles/global';
+
+import theme from '../styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const store = useStore();
-
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <React.StrictMode>
+      <ResetStyle />
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </React.StrictMode>
   );
 }
 
