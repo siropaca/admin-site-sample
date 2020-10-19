@@ -1,12 +1,14 @@
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import createStore from '../createStore';
+import { useStore } from '../store';
 
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const store = useStore();
+
   return (
-    <Provider store={createStore()}>
+    <Provider store={store}>
       <Component {...pageProps} />
     </Provider>
   );
