@@ -2,6 +2,8 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
+import Layout from '../components/layout';
+
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import ResetStyle from '../styles/reset';
@@ -15,7 +17,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ResetStyle />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        {true ? (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </ThemeProvider>
     </React.StrictMode>
   );
