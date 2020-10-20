@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
+  header: {
+    boxShadow: 'none'
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -23,19 +23,19 @@ export default function Layout(props) {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.header}>
       <Toolbar>
         <IconButton
           edge="start"
-          className={classes.menuButton}
           color="inherit"
+          className={classes.menuButton}
           aria-label="menu">
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
           タイトル
         </Typography>
-        <Button color="inherit">Login</Button>
+        <Button color="inherit">ログイン</Button>
       </Toolbar>
     </AppBar>
   );

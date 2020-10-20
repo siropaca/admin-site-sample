@@ -40,20 +40,15 @@ const theme = createMuiTheme({
   typography: {
     fontFamily:
       '-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif',
-    fontSize: 16
+    fontSize: 15
   },
   overrides: {
     MuiButton: {
       root: {
         textTransform: 'none',
-        fontSize: '0.75rem',
+        fontSize: '0.78rem',
         fontWeight: 700,
         letterSpacing: '0.05rem'
-      },
-      containedSizeLarge: {
-        padding: '11px 22px',
-        fontSize: '1rem',
-        lineHeight: 1
       }
     }
   }
