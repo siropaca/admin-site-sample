@@ -8,7 +8,6 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <div>{process.env.API_KEY}</div>
-        <Link href="/hoge">ほげへ</Link>
       </main>
     </div>
   );

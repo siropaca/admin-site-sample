@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
+import createStore from '../src/store';
 
 import Layout from '../components/layout';
 
@@ -22,14 +23,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <React.Fragment>
+    <Provider store={createStore()}>
       <Head>
         <title>BortShare Management</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
       </Head>
       <ThemeProvider theme={theme}>
         <ResetStyle />
@@ -42,7 +38,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         )}
       </ThemeProvider>
-    </React.Fragment>
+    </Provider>
   );
 }
 
