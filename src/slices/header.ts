@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type HeaderState = {
+export interface HeaderState {
   mobileOpen: boolean;
-};
+}
 
 export const initialState: HeaderState = {
   mobileOpen: false

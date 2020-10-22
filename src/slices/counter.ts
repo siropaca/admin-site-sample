@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type CounterState = {
+export interface CounterState {
   count: number;
   loading: boolean;
   error: boolean;
   errorMessage: string;
-};
+}
 
 export const initialState: CounterState = {
   count: 0,
