@@ -3,9 +3,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#7A9C98',
-      main: '#5D8B85',
-      dark: '#557571',
+      light: '#4D7CB6',
+      main: '#004497',
+      dark: '#003584',
       contrastText: '#fff'
     },
     secondary: {
@@ -49,6 +49,11 @@ const theme = createMuiTheme({
         fontSize: '0.78rem',
         fontWeight: 700,
         letterSpacing: '0.05rem'
+      }
+    },
+    MuiAppBar: {
+      root: {
+        boxShadow: 'none'
       }
     }
   }
