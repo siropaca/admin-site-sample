@@ -1,16 +1,13 @@
-import { Store, combineReducers, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
 import logger from 'redux-logger';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import counterSlice, { initialState as counterState } from './slices/counter';
 import headerSlice, { initialState as headerState } from './slices/header';
 
 const rootReducer = combineReducers({
-  counter: counterSlice.reducer,
   header: headerSlice.reducer
 });
 
 const preloadedState = {
-  counter: counterState,
   header: headerState
 };
 
