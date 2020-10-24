@@ -35,16 +35,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+interface Props {}
 
 export default function DrawerMenu(props: Props) {
-  const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
 
@@ -88,15 +81,10 @@ export default function DrawerMenu(props: Props) {
     </div>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
     <nav className={classes.drawer} aria-label="mailbox folders">
-      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
       <Hidden smUp implementation="css">
         <Drawer
-          container={container}
           variant="temporary"
           anchor={theme.direction === 'rtl' ? 'right' : 'left'}
           open={state.mobileOpen}
