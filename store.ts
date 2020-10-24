@@ -6,7 +6,7 @@ import headerSlice, {
 } from './lib/slices/headerSlice';
 
 const rootReducer = combineReducers({
-  header: headerSlice
+  header: headerSlice.reducer
 });
 
 const preloadedState = {
