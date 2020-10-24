@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import headerSlice, { HeaderState } from '../src/slices/header';
+import headerSlice, { HeaderState } from '../lib/slices/header';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';

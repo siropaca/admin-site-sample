@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import headerSlice, { HeaderState } from '../src/slices/header';
+import headerSlice, { HeaderState } from '../lib/slices/header';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';

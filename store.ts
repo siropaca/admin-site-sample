@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import logger from 'redux-logger';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import headerSlice, { initialState as headerState } from './slices/header';
+import headerSlice, { initialState as headerState } from './lib/slices/header';
 
 const rootReducer = combineReducers({
   header: headerSlice.reducer
