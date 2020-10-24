@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from '../components/header';
 import DrawerMenu from '../components/drawerMenu';
+import Footer from '../components/footer';
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
@@ -11,7 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     toolbar: theme.mixins.toolbar,
     content: {
-      flexGrow: 1,
+      flexGrow: 1
+    },
+    main: {
       padding: theme.spacing(3)
     }
   })
@@ -28,10 +31,13 @@ export default function Layout(props: Props) {
     <div className={classes.root}>
       <Header />
       <DrawerMenu />
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        {props.children}
-      </main>
+      <div className={classes.content}>
+        <main className={classes.main}>
+          <div className={classes.toolbar} />
+          {props.children}
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
