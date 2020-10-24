@@ -19,4 +19,4 @@ const headerSlice = createSlice({
   }
 });
 
-export default headerSlice;
+export default headerSlice.reducer;
