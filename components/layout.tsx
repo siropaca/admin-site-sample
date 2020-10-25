@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import Header from '../components/header';
 import DrawerMenu from '../components/drawerMenu';
-import Footer from '../components/footer';
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
@@ -36,7 +35,6 @@ export default function Layout(props: Props) {
           <div className={classes.toolbar} />
           {props.children}
         </main>
-        <Footer />
       </div>
     </div>
   );
