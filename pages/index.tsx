@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import useSWR from 'swr';
-import { InferGetServerSidePropsType } from 'next';
 
 export default function Index() {
   const { data, error } = useSWR('/api/hello', fetch);
@@ -21,7 +20,7 @@ export default function Index() {
 export async function getServerSideProps(context) {
   const res = await fetch('https://httpbin.org/get');
   const data = await res.json();
-  console.log(context);
+  // console.log(context);
   console.log(data);
 
   return { props: { data } };

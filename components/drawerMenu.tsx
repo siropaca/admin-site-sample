@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import headerSlice, { HeaderState } from '../lib/slices/headerSlice';
@@ -18,7 +19,7 @@ import {
   createStyles
 } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,9 +29,54 @@ const useStyles = makeStyles((theme: Theme) =>
         flexShrink: 0
       }
     },
-    toolbar: theme.mixins.toolbar,
+    toolbar: {
+      ...theme.mixins.toolbar,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    logo: {
+      width: '78%',
+      cursor: 'pointer'
+    },
     drawerPaper: {
-      width: drawerWidth
+      width: drawerWidth,
+      borderRight: 'none',
+      boxShadow: `0 10px 30px -12px rgba(0, 0, 0, 0.42),
+         0 4px 25px 0px rgba(0, 0, 0, 0.12),
+         0 8px 10px -5px rgba(0, 0, 0, 0.2)`
+    },
+    drawerBody: {
+      zIndex: 4,
+      color: '#fff'
+    },
+    background: {
+      'top': 0,
+      'left': 0,
+      'width': '100%',
+      'height': '100%',
+      'display': 'block',
+      'zIndex': 1,
+      'position': 'absolute',
+      'backgroundSize': 'cover',
+      'backgroundPosition': 'center center',
+      'backgroundImage': 'url(/images/dolphin.jpg)',
+      '&:after': {
+        content: '""',
+        width: '100%',
+        height: '100%',
+        display: 'block',
+        opacity: 0.8,
+        zIndex: 3,
+        position: 'absolute',
+        background: '#000'
+      }
+    },
+    icon: {
+      color: '#fff'
+    },
+    divider: {
+      backgroundColor: 'rgba(180, 180, 180, 0.3)'
     }
   })
 );
@@ -54,31 +100,38 @@ export default function DrawerMenu(props: Props) {
   };
 
   const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <>
+      <div className={classes.drawerBody}>
+        <div className={classes.toolbar}>
+          <Link href="/">
+            <img src="/images/logo.png" alt="logo" className={classes.logo} />
+          </Link>
+        </div>
+        <Divider className={classes.divider} />
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon className={classes.icon}>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider className={classes.divider} />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon className={classes.icon}>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </div>
+      <div className={classes.background}></div>
+    </>
   );
 
   return (

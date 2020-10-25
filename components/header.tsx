@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import headerSlice, { HeaderState } from '../lib/slices/headerSlice';
 
+import { drawerWidth } from '../components/drawerMenu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,11 +10,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
+      color: theme.palette.text.primary,
+      backgroundColor: theme.palette.background.default,
       [theme.breakpoints.up('sm')]: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth
@@ -57,7 +58,7 @@ export default function Header(props: Props) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Responsive drawer
+          Dashboard
         </Typography>
       </Toolbar>
     </AppBar>
