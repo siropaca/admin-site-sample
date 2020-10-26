@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import Header from '../components/header';
 import DrawerMenu from '../components/drawerMenu';
-
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,7 +22,7 @@ interface Props {
   children?: ReactNode;
 }
 
-export default function Layout(props: Props) {
+function Layout(props: Props) {
   const classes = useStyles();
 
   return (
@@ -39,3 +38,5 @@ export default function Layout(props: Props) {
     </div>
   );
 }
+
+export default Layout;

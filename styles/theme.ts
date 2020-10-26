@@ -3,9 +3,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#4D7CB6',
-      main: '#004497',
-      dark: '#003584',
+      light: '#7986cb',
+      main: '#3f51b5',
+      dark: '#303f9f',
       contrastText: '#fff'
     },
     secondary: {
@@ -46,7 +46,6 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         textTransform: 'none',
-        fontSize: '0.78rem',
         fontWeight: 700,
         letterSpacing: '0.05rem'
       }

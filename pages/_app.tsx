@@ -4,14 +4,11 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import createStore from '../store';
-
 import Layout from '../components/layout';
-
-import { ThemeProvider } from '@material-ui/core/styles';
-
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import ResetStyle from '../styles/reset';
 import GlobalStyle from '../styles/global';
-import theme from '../styles/theme';
+import customTheme from '../styles/theme';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -22,6 +19,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
+  const theme = createMuiTheme({
+    ...customTheme,
+    palette: {
+      type: pageProps.darkMode ? 'dark' : 'light'
+    }
+  });
+
   return (
     <Provider store={createStore()}>
       <Head>
@@ -30,7 +34,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <ResetStyle />
         <GlobalStyle />
-        {true ? (
+        {pageProps.layout ? (
           <Layout>
             <Component {...pageProps} />
           </Layout>

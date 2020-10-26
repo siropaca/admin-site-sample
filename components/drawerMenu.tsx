@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import headerSlice, { HeaderState } from '../lib/slices/headerSlice';
-
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
@@ -19,7 +18,7 @@ import {
   createStyles
 } from '@material-ui/core/styles';
 
-export const drawerWidth = 240;
+export const drawerWidth = 260;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center'
     },
     logo: {
-      width: '78%',
+      width: '75%',
       cursor: 'pointer'
     },
     drawerPaper: {
@@ -60,6 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
       'position': 'absolute',
       'backgroundSize': 'cover',
       'backgroundPosition': 'center center',
+      'backgroundRepeat': 'no-repeat',
       'backgroundImage': 'url(/images/dolphin.jpg)',
       '&:after': {
         content: '""',
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {}
 
-export default function DrawerMenu(props: Props) {
+function DrawerMenu(props: Props) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -164,3 +164,5 @@ export default function DrawerMenu(props: Props) {
     </nav>
   );
 }
+
+export default DrawerMenu;
