@@ -17,13 +17,20 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
       alignItems: 'center',
-      width: '380px',
-      borderRadius: '5px',
+      width: '100%',
+      height: '100%',
+      borderRadius: 0,
       backgroundColor: 'rgba(0, 0, 0, 0.4)',
       padding: theme.spacing(4),
       color: '#fff',
-      backdropFilter: 'blur(5px)'
+      backdropFilter: 'blur(5px)',
+      [theme.breakpoints.up('sm')]: {
+        width: '380px',
+        height: 'auto',
+        borderRadius: '5px'
+      }
     },
     logo: {
       width: '78%'
