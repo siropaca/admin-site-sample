@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import TextField from '@material-ui/core/TextField';
@@ -113,7 +113,6 @@ function LoginForm(props) {
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-                aria-label="toggle password visibility"
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}>
                 {values.showPassword ? <Visibility /> : <VisibilityOff />}

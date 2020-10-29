@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import headerSlice, { HeaderState } from '../lib/slices/headerSlice';
@@ -82,7 +82,7 @@ function Header(props: Props) {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>Setting</MenuItem>
       <Divider />
-      <MenuItem onClick={handleSginOut}>Sgin out</MenuItem>
+      <MenuItem onClick={handleSginOut}>Logout</MenuItem>
     </Menu>
   );
 
@@ -92,7 +92,6 @@ function Header(props: Props) {
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             className={classes.menuButton}>
@@ -101,7 +100,7 @@ function Header(props: Props) {
           <Typography variant="h6" noWrap className={classes.title}>
             Dashboard
           </Typography>
-          <IconButton aria-label="show 11 new notifications" color="inherit">
+          <IconButton color="inherit">
             <Badge badgeContent={11} color="secondary">
               <NotificationsIcon />
             </Badge>
