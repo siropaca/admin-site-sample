@@ -9,8 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
-export const drawerWidth = 260;
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: {
