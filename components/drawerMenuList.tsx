@@ -9,6 +9,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
+const backImgUrl = '/images/dolphin.jpg';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: {
@@ -36,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
       'backgroundSize': 'cover',
       'backgroundPosition': 'center center',
       'backgroundRepeat': 'no-repeat',
-      'backgroundImage': 'url(/images/dolphin.jpg)',
+      'backgroundImage': `url(${backImgUrl})`,
       '&:after': {
         content: '""',
         width: '100%',
